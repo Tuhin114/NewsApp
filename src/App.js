@@ -17,13 +17,13 @@ export default class App extends Component {
           <Routes>
             <Route
               exact
-              path="/"
+              path="/general"
               element={
                 <News
                   key="general"
                   pageSize={this.pageSize}
                   country="in"
-                  category="general"
+                  category="General"
                 />
               }
             />
@@ -35,7 +35,7 @@ export default class App extends Component {
                   key="business"
                   pageSize={this.pageSize}
                   country="in"
-                  category="business"
+                  category="Business"
                 />
               }
             />
@@ -47,7 +47,7 @@ export default class App extends Component {
                   key="entertainment"
                   pageSize={this.pageSize}
                   country="in"
-                  category="entertainment"
+                  category="Entertainment"
                 />
               }
             />
@@ -59,7 +59,7 @@ export default class App extends Component {
                   key="health"
                   pageSize={this.pageSize}
                   country="in"
-                  category="health"
+                  category="Health"
                 />
               }
             />
@@ -71,7 +71,7 @@ export default class App extends Component {
                   key="science"
                   pageSize={this.pageSize}
                   country="in"
-                  category="science"
+                  category="Science"
                 />
               }
             />
@@ -83,7 +83,7 @@ export default class App extends Component {
                   key="sports"
                   pageSize={this.pageSize}
                   country="in"
-                  category="sports"
+                  category="Sports"
                 />
               }
             />
@@ -95,7 +95,7 @@ export default class App extends Component {
                   key="technology"
                   pageSize={this.pageSize}
                   country="in"
-                  category="technology"
+                  category="Technology"
                 />
               }
             />

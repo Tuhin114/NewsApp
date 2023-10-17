@@ -17,14 +17,15 @@ export class News extends Component {
     category: PropTypes.string,
   };
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     console.log("Hello I am constructor from news component");
     this.state = {
       articles: [],
       loading: false,
       page: 1,
     };
+    document.title = `NewsMonkey - ${this.props.category}`;
   }
 
   async updateNews() {
@@ -108,7 +109,7 @@ export class News extends Component {
     return (
       <div className="container my-3">
         <h1 className="text-center" style={{ margin: "35px 0px" }}>
-          NewsMonkey - Tops headlines.
+          NewsMonkey - Tops {this.props.category} Headlines
         </h1>
         {this.state.loading && <Spinner />}
         <div className="row">
