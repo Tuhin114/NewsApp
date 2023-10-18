@@ -10,7 +10,6 @@ const News = (props) => {
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [totalResults, setTotalResults] = useState(0);
-  // document.title = `NewsMonkey - ${props.category}`;
 
   const updateNews = async () => {
     props.setProgress(10);
@@ -28,7 +27,9 @@ const News = (props) => {
   };
 
   useEffect(() => {
+    document.title = `NewsMonkey - ${props.category}`;
     updateNews();
+    // eslint-disable-next-line
   }, []);
 
   // const  componentDidMount = async()=> {
@@ -45,57 +46,57 @@ const News = (props) => {
   //   updateNews();
   // }
 
-  const handlePrevClick = async () => {
-    // let url = `https://newsapi.org/v2/top-headlines?country=${
-    //   props.country
-    // }&category=${
-    //   props.category
-    // }&apiKey=461d1ef454ad4675a25279810fdcfad4&page=${
-    //   page - 1
-    // }&pageSize=${props.pageSize}`;
-    // this.setState({ loading: true });
-    // let data = await fetch(url);
-    // let parsedData = await data.json();
-    // console.log(parsedData);
-    // this.setState({ articles: parsedData.articles });
-    // this.setState({
-    //   page: page - 1,
-    //   articles: parsedData.articles,
-    //   loading: false,
-    // });
-    // this.setState({ page: page - 1 });
-    setPage(page - 1);
-    updateNews();
-  };
+  // const handlePrevClick = async () => {
+  // let url = `https://newsapi.org/v2/top-headlines?country=${
+  //   props.country
+  // }&category=${
+  //   props.category
+  // }&apiKey=461d1ef454ad4675a25279810fdcfad4&page=${
+  //   page - 1
+  // }&pageSize=${props.pageSize}`;
+  // this.setState({ loading: true });
+  // let data = await fetch(url);
+  // let parsedData = await data.json();
+  // console.log(parsedData);
+  // this.setState({ articles: parsedData.articles });
+  // this.setState({
+  //   page: page - 1,
+  //   articles: parsedData.articles,
+  //   loading: false,
+  // });
+  // this.setState({ page: page - 1 });
+  //   setPage(page - 1);
+  //   updateNews();
+  // };
 
-  const handleNextClick = async () => {
-    // if (
-    //   !(
-    //     page + 1 >
-    //     Math.ceil(pagetotalResults / props.pageSize)
-    //   )
-    // ) {
-    // }
-    // let url = `https://newsapi.org/v2/top-headlines?country=${
-    //   props.country
-    // }&category=${
-    //   props.category
-    // }&apiKey=461d1ef454ad4675a25279810fdcfad4&page=${
-    //   page + 1
-    // }&pageSize=${props.pageSize}`;
-    // this.setState({ loading: true });
-    // let data = await fetch(url);
-    // let parsedData = await data.json();
-    // this.setState({ articles: parsedData.articles });
-    // this.setState({
-    //   page: page + 1,
-    //   articles: parsedData.articles,
-    //   loading: false,
-    // });
-    // this.setState({ page: page + 1 });
-    setPage(page + 1);
-    updateNews();
-  };
+  // const handleNextClick = async () => {
+  // if (
+  //   !(
+  //     page + 1 >
+  //     Math.ceil(pagetotalResults / props.pageSize)
+  //   )
+  // ) {
+  // }
+  // let url = `https://newsapi.org/v2/top-headlines?country=${
+  //   props.country
+  // }&category=${
+  //   props.category
+  // }&apiKey=461d1ef454ad4675a25279810fdcfad4&page=${
+  //   page + 1
+  // }&pageSize=${props.pageSize}`;
+  // this.setState({ loading: true });
+  // let data = await fetch(url);
+  // let parsedData = await data.json();
+  // this.setState({ articles: parsedData.articles });
+  // this.setState({
+  //   page: page + 1,
+  //   articles: parsedData.articles,
+  //   loading: false,
+  // });
+  // this.setState({ page: page + 1 });
+  //   setPage(page + 1);
+  //   updateNews();
+  // };
 
   const fetchMoreData = async () => {
     setPage(page + 1);
@@ -109,7 +110,10 @@ const News = (props) => {
 
   return (
     <>
-      <h1 className="text-center" style={{ margin: "35px 0px" }}>
+      <h1
+        className="text-center"
+        style={{ margin: "35px 0px", marginTop: "90px" }}
+      >
         NewsMonkey - Tops {props.category} Headlines
       </h1>
       {loading && <Spinner />}
