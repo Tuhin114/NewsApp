@@ -27,9 +27,9 @@ const News = (props) => {
   };
 
   useEffect(() => {
-    document.title = `NewsMonkey - ${props.category}`;
+    document.title = `News@365- ${props.category}`;
     updateNews();
-    // eslint-disable-next-line
+    // eslint-disable-next-lineR
   }, []);
 
   // const  componentDidMount = async()=> {
