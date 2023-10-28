@@ -5,7 +5,9 @@ import { Link } from "react-router-dom";
 const NavBar = (props) => {
   return (
     <div>
-      <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+      <nav
+        className={`navbar fixed-top navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}
+      >
         <div className="container-fluid">
           <Link className="navbar-brand" to="/">
             News@365

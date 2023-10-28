@@ -30,7 +30,7 @@ const News = (props) => {
     document.title = `News@365- ${props.category}`;
     updateNews();
     // eslint-disable-next-lineR
-  }, []);
+  }, [props.category]);
 
   // const  componentDidMount = async()=> {
   // let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=461d1ef454ad4675a25279810fdcfad4&page=1&pageSize=${props.pageSize}`;
@@ -112,7 +112,11 @@ const News = (props) => {
     <>
       <h1
         className="text-center"
-        style={{ margin: "35px 0px", marginTop: "90px" }}
+        style={{
+          margin: "35px 0px",
+          marginTop: "90px",
+          color: props.mode === "light" ? "black" : "white",
+        }}
       >
         News@365 - Tops {props.category} Headlines
       </h1>

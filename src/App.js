@@ -9,15 +9,26 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import LoadingBar from "react-top-loading-bar";
 
 const App = () => {
+  const [mode, setMode] = useState("light"); // whether dark mode is enabled or not
   const pageSize = 9;
   const apiKey = process.env.REACT_APP_NEWS_API;
 
   const [progress, setProgress] = useState(0);
 
+  const toggleMode = () => {
+    if (mode === "light") {
+      setMode("dark");
+      document.body.style.backgroundColor = "grey";
+    } else {
+      setMode("light");
+      document.body.style.backgroundColor = "white";
+    }
+  };
+
   return (
     <div>
       <BrowserRouter>
-        <Navbar />
+        <Navbar mode={mode} toggleMode={toggleMode} />
         <LoadingBar color="#f11946" height={5} progress={progress} />
         <Routes>
           <Route
