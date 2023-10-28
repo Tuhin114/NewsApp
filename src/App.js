@@ -18,7 +18,7 @@ const App = () => {
   const toggleMode = () => {
     if (mode === "light") {
       setMode("dark");
-      document.body.style.backgroundColor = "grey";
+      document.body.style.backgroundColor = "black";
     } else {
       setMode("light");
       document.body.style.backgroundColor = "white";
@@ -42,6 +42,7 @@ const App = () => {
                 pageSize={pageSize}
                 country="in"
                 category="General"
+                mode={mode}
               />
             }
           />
