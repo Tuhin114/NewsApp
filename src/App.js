@@ -57,6 +57,7 @@ const App = () => {
                 pageSize={pageSize}
                 country="in"
                 category="Business"
+                mode={mode}
               />
             }
           />
@@ -71,6 +72,7 @@ const App = () => {
                 pageSize={pageSize}
                 country="in"
                 category="Entertainment"
+                mode={mode}
               />
             }
           />
@@ -85,6 +87,7 @@ const App = () => {
                 pageSize={pageSize}
                 country="in"
                 category="Health"
+                mode={mode}
               />
             }
           />
@@ -99,6 +102,7 @@ const App = () => {
                 pageSize={pageSize}
                 country="in"
                 category="Science"
+                mode={mode}
               />
             }
           />
@@ -113,6 +117,7 @@ const App = () => {
                 pageSize={pageSize}
                 country="in"
                 category="Sports"
+                mode={mode}
               />
             }
           />
@@ -127,6 +132,7 @@ const App = () => {
                 pageSize={pageSize}
                 country="in"
                 category="Technology"
+                mode={mode}
               />
             }
           />
