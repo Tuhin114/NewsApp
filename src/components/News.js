@@ -10,6 +10,15 @@ const News = (props) => {
   const [loading, setLoading] = useState(true);
   const [page, setPage] = useState(1);
   const [totalResults, setTotalResults] = useState(0);
+  const [mode, setMode] = useState("light");
+
+  const toggleMode = () => {
+    if (mode === "light") {
+      setMode("dark");
+    } else {
+      setMode("light");
+    }
+  };
 
   const updateNews = async () => {
     props.setProgress(10);
@@ -157,6 +166,8 @@ const News = (props) => {
               return (
                 <div className="col-md-4" key={index}>
                   <NewsItem
+                    mode={mode}
+                    toggleMode={toggleMode}
                     title={element.title ? element.title.slice(0, 45) : ""}
                     description={
                       element.description

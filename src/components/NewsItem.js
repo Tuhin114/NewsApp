@@ -2,10 +2,21 @@
 import React from "react";
 
 const NewsItem = (props) => {
-  let { title, description, imageUrl, newsUrl, author, date, source } = props;
+  let { title, description, imageUrl, newsUrl, author, date, source, mode } =
+    props;
+  let myStyle = {
+    color: props.mode === "dark" ? "white" : "rgb(139 133 133)",
+    backgroundColor: props.mode === "dark" ? "rgb(139 133 133)" : "white",
+  };
+
   return (
     <div className="my-3">
-      <div className="card">
+      <div
+        className="card"
+        style={{
+          border: "1px solid white",
+        }}
+      >
         <div
           style={{
             display: "flex",
@@ -25,8 +36,20 @@ const NewsItem = (props) => {
           className="card-img-top"
           alt="..."
         />
-        <div className="card-body">
-          <h5 className="card-title">{title}...</h5>
+        <div
+          className="card-body"
+          // style={{
+          //   backgroundColor: props.mode === "light" ? "white" : "black",
+          //   color: props.mode === "light" ? "black" : "white",
+          // }}
+          style={myStyle}
+        >
+          <h5
+            className="card-title"
+            style={{ color: props.mode === "light" ? "black" : "white" }}
+          >
+            {title}...
+          </h5>
           <p className="card-text">{description}....</p>
           <p className="card-text">
             <small className="text-muted">
@@ -38,7 +61,7 @@ const NewsItem = (props) => {
             rel="noreferrer"
             href={newsUrl}
             target="_blank"
-            className="btn btn-sm btn-dark"
+            className={`btn btn-sm btn-${mode}`}
           >
             Read More...
           </a>
