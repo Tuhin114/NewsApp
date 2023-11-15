@@ -36,9 +36,9 @@ const News = (props) => {
   };
 
   useEffect(() => {
-    document.title = `News@365- ${props.category}`;
+    document.title = `News@365 - ${props.category}`;
     updateNews();
-    // eslint-disable-next-lineR
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [props.category]);
 
   // const  componentDidMount = async()=> {
