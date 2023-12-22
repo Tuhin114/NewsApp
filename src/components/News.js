@@ -72,7 +72,9 @@ const News = (props) => {
         style={{
           margin: "35px 0px",
           marginTop: "90px",
-          color: props.mode === "light" ? "black" : "white",
+          color: props.mode === "black" ? "dark" : "grey",
+          backgroundColor: props.mode === "light" ? "white" : "black",
+          transition: "background-color 0.3s ease",
         }}
       >
         News@365 - Tops {props.category} Headlines
