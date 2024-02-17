@@ -72,7 +72,7 @@ const News = (props) => {
         style={{
           margin: "35px 0px",
           marginTop: "90px",
-          color: props.mode === "black" ? "dark" : "grey",
+          color: props.mode === "light" ? "black" : "grey",
           backgroundColor: props.mode === "light" ? "white" : "black",
           transition: "background-color 0.3s ease",
         }}

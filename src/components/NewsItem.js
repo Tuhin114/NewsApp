@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 
 const NewsItem = (props) => {
   let { title, description, imageUrl, newsUrl, author, date, source } = props;
+  const [mode, setMode] = useState("light");
+
+  const toggleMode = () => {
+    if (mode === "light") {
+      setMode("dark");
+    } else {
+      setMode("light");
+    }
+  };
   return (
     <div className="my-3">
       <div className="card">
@@ -24,7 +33,12 @@ const NewsItem = (props) => {
           className="card-img-top"
           alt="..."
         />
-        <div className="card-body">
+        <div
+          className="card-body"
+          mode={mode}
+          toggleMode={toggleMode}
+          style={{ backgroundColor: props.mode === "light" ? "white" : "grey" }}
+        >
           <h5 className="card-title">{title} </h5>
           <p className="card-text">{description}</p>
           <p className="card-text">
